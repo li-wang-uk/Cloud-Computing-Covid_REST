@@ -21,7 +21,7 @@ https://covid19api.com/
     - username=Sarah, password=sarahsmith 
     - username=John, password=johnsmith 
 
-##Register (/regsiter)
+##Register (/register)
 - The user can register a new user
 
 ##Account (/account)
