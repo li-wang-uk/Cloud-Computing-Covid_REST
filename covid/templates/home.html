@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% if current_user.is_authenticated %}
+        <p>Hello, {{current_user.username}}</p>                
+        <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>                   
+        <p>You can access:</p>
+        <ul>
+            <li>/account</li>
+            <li>/global</li>
+            <li>/all</li>
+            <li>/all/ranking/{stat}</li>
+            <li>/query/{commonCountryName}</li>
+            <li>/query/percentage/{commonCountryName}</li>
+            <li>/favorite</li>
+            <li>/favorite/{country}</li>
+            <li>/favorite/ranking/{stat}</li>
+        </ul>      
+    {% else %}  
+        <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a><br>
+        <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+        <p>Without login, you can access:</p>
+        <ul>
+            <li>/global</li>
+            <li>/all</li>
+            <li>/all/ranking/{stat}</li>
+            <li>/query/{commonCountryName}</li>
+            <li>/query/percentage/{commonCountryName}</li>
+        </ul>      
+    {% endif %}  
+
+</html>
